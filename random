@@ -1,0 +1,25 @@
+#defint kry1 digitalRead(A0)
+int ledPin[] = {1,2,3,4,5,6};
+int buttonState = 0;
+
+void setup() {
+    Serial.begin(9600);
+    for(int i = 0 ; i<6 ; i++) {
+        pinMode(ledPin [i] , OUTPUT);
+    }
+    pinMode(A0, INPUT);
+    randomSeed(analogRead(0));
+}
+
+void loop() {
+    // buttonState = digitalRead(buttonPin);
+    if (key1 == LOW) {
+        int randomNum = random(1 , 7);
+        Serial.println(randomNum);
+        digitalWrite(ledPin [randomNum -1] , HIGH);
+        delay(1000);
+        for( int i = 0 ; i < 6 ; i++) {
+            digitalWrite(ledPin[i] , LOW);
+        }
+    }
+}
