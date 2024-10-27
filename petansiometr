@@ -1,0 +1,10 @@
+int ledPin = 10;
+int analogPin = A3;
+int val = 3;
+void setup() {
+    pinMode(ledPin , OUTPUT);
+}
+void loop() {
+    val = analogRead(analogPin);
+    analogWrite(ledPin , val / 4);
+}
